@@ -13,8 +13,11 @@ public class Player : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
 
     public bool nearSacrifice = false;
+    public GameObject nearSacObject;
 
     public List<GameObject> fishList = new List<GameObject>();
+    public GameObject curFish;
+
 
     public Animator anim;
 
@@ -59,9 +62,12 @@ public class Player : MonoBehaviour
 
             if (nearSacrifice)
             {
+                curFish = fishList[0];
                 // anim.SetBool("Sacrificing", true);
-                GameObject.Destroy(fishList[fishList.Count - 1]);
-                fishList.RemoveAt(fishList.Count - 1);
+                GameObject.Destroy(curFish);
+                fishList.RemoveAt(0);
+                nearSacObject.GetComponentInParent<BloodDoorHandler>().sacrificed = true;
+                Destroy(nearSacObject);
             }
         }
 
@@ -70,7 +76,7 @@ public class Player : MonoBehaviour
             if (fishList.Count >= 0)
             {
                 //anim.SetBool("Holding", false);
-                fishList[fishList.Count].gameObject.GetComponent<Fish>().target = this.gameObject;
+                fishList[0].gameObject.GetComponent<Fish>().target = this.gameObject;
             }
         }
 
@@ -90,9 +96,10 @@ public class Player : MonoBehaviour
             //fishList.Add(other.gameObject);
         }
 
-        if (other.gameObject.name == "Area Check")
+        if (other.gameObject.name == "Area Check" && !other.gameObject.GetComponentInParent<BloodDoorHandler>().sacrificed)
         {
             nearSacrifice = true;
+            nearSacObject = other.gameObject.GetComponentInParent<BloodDoorHandler>().barrier;
         }
     }
 

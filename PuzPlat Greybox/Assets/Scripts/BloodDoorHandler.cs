@@ -7,6 +7,8 @@ public class BloodDoorHandler : MonoBehaviour
 
     public Material doorMatActive;
     public Material doorMatInactive;
+    public GameObject barrier;
+
 
     public bool sacrificed = false;
 
@@ -25,7 +27,7 @@ public class BloodDoorHandler : MonoBehaviour
     {
         if (sacrificed)
         {
-            //gameObject.GetComponent<Material>().SetTexture(doorMatInactive);
+            Destroy(barrier);
         }
     }
 }
