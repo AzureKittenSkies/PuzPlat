@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{C563A05D-F619-DF18-56AA-6E835D66D0F0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PuzPlat Greybox", "Assembly-CSharp.csproj", "{C563A05D-F619-DF18-56AA-6E835D66D0F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

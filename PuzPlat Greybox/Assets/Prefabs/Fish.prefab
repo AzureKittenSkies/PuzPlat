@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 4875899184061516}
   - component: {fileID: 114935217567791572}
   - component: {fileID: 54680672873545488}
+  - component: {fileID: 135265952787893700}
   m_Layer: 0
   m_Name: Fish
   m_TagString: Untagged
@@ -228,9 +229,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigid: {fileID: 54680672873545488}
-  target: {fileID: 1834507566261134, guid: a28581ceb4b064540a7858d9056bd7c3, type: 2}
+  target: {fileID: 0}
+  player: {fileID: 0}
+  sacTarget: {fileID: 0}
   speed: 5
   rotationSpeed: 5
+--- !u!135 &135265952787893700
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1947534918735658}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135372263270273524
 SphereCollider:
   m_ObjectHideFlags: 1

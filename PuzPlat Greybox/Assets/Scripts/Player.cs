@@ -9,13 +9,10 @@ public class Player : MonoBehaviour
     public float runSpeed = 7.5f;
     public float jumpSpeed = 10f;
     public float gravity = 20.0f;
-
-    public bool nearSacrifice = false;
-
-
     public CharacterController controller;
     private Vector3 moveDirection = Vector3.zero;
 
+    public bool nearSacrifice = false;
 
     public List<GameObject> fishList = new List<GameObject>();
 
@@ -23,33 +20,27 @@ public class Player : MonoBehaviour
 
     public GameObject sacrificeTarget;
 
+    public Transform cam;
 
-
+    public int fishIndex = 0;
 
 
 
     // Update is called once per frame
     void Update()
     {
-
         float inputH = Input.GetAxis("Horizontal");
         float inputV = Input.GetAxis("Vertical");
 
         if (controller.isGrounded)
         {
+            // rotate the player in the direction of camera
+            Vector3 euler = cam.transform.eulerAngles;
+            transform.rotation = Quaternion.AngleAxis(euler.y, Vector3.up);
+
 
             moveDirection = new Vector3(inputH, 0, inputV);
             moveDirection = transform.TransformDirection(moveDirection);
-
-            if (Input.GetKeyDown(KeyCode.LeftShift))
-            {
-                speed = runSpeed;
-            }
-
-            else if (Input.GetKeyUp(KeyCode.LeftShift))
-            {
-                speed = walkSpeed;
-            }
             moveDirection *= speed;
 
             if (Input.GetButton("Jump"))
@@ -57,27 +48,35 @@ public class Player : MonoBehaviour
                 moveDirection.y = jumpSpeed;
             }
         }
+
         moveDirection.y -= gravity * Time.deltaTime;
         controller.Move(moveDirection * Time.deltaTime);
 
         if (Input.GetKeyDown(KeyCode.J))
         {
-            anim.SetBool("Holding", true);
-            fishList[fishList.Count].gameObject.GetComponent<FishFollow>().target = sacrificeTarget;
+            //anim.SetBool("Holding", true);
+            //fishList[fishList.Count].gameObject.GetComponent<Fish>().target = sacrificeTarget;
 
             if (nearSacrifice)
             {
-                anim.SetBool("Sacrificing", true);
-                GameObject.Destroy(fishList[fishList.Count]);
-                fishList.RemoveAt(fishList.Count);
+                // anim.SetBool("Sacrificing", true);
+                GameObject.Destroy(fishList[fishList.Count - 1]);
+                fishList.RemoveAt(fishList.Count - 1);
             }
         }
 
         if (Input.GetKeyUp(KeyCode.J))
         {
-            anim.SetBool("Holding", false);
-            fishList[fishList.Count].gameObject.GetComponent<FishFollow>().target = this.gameObject;
+            if (fishList.Count >= 0)
+            {
+                //anim.SetBool("Holding", false);
+                fishList[fishList.Count].gameObject.GetComponent<Fish>().target = this.gameObject;
+            }
+        }
 
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            Debug.Log(fishList.Count);
         }
 
 
@@ -88,10 +87,10 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.name == "Fish")
         {
-            fishList.Add(other.gameObject);
+            //fishList.Add(other.gameObject);
         }
 
-        if (other.gameObject.name == "Blood Door" || other.gameObject.name == "Holding Switch")
+        if (other.gameObject.name == "Area Check")
         {
             nearSacrifice = true;
         }
