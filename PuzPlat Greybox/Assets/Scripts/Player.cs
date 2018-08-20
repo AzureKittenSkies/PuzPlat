@@ -12,8 +12,10 @@ public class Player : MonoBehaviour
     public CharacterController controller;
     private Vector3 moveDirection = Vector3.zero;
 
-    public bool nearSacrifice = false;
-    public GameObject nearSacObject;
+    public bool nearSacrifice, nearSwitch;
+    public GameObject nearSacObj, nearSwitchObj;
+    public Switch switchScript;
+
 
     public List<GameObject> fishList = new List<GameObject>();
     public GameObject curFish;
@@ -60,15 +62,30 @@ public class Player : MonoBehaviour
             //anim.SetBool("Holding", true);
             //fishList[fishList.Count].gameObject.GetComponent<Fish>().target = sacrificeTarget;
 
-            if (nearSacrifice)
+            if (nearSacrifice && fishList.Count > 0)
             {
                 curFish = fishList[0];
                 // anim.SetBool("Sacrificing", true);
                 GameObject.Destroy(curFish);
                 fishList.RemoveAt(0);
-                nearSacObject.GetComponentInParent<BloodDoorHandler>().sacrificed = true;
-                Destroy(nearSacObject);
+                nearSacObj.GetComponentInParent<BloodDoorHandler>().sacrificed = true;
+                Destroy(nearSacObj);
             }
+
+            if (nearSwitch && fishList.Count > 0 && !switchScript.active)
+            {
+                curFish = fishList[0];
+                nearSwitchObj.GetComponent<Switch>().active = true;
+                GameObject.Destroy(curFish);
+                fishList.RemoveAt(0);
+                //fishList[0].GetComponent<Fish>().target = nearSwitchObj;
+            }
+
+            if (nearSwitch && switchScript.active)
+            {
+                // attatch a fish to the 
+            }
+
         }
 
         if (Input.GetKeyUp(KeyCode.J))
@@ -99,8 +116,19 @@ public class Player : MonoBehaviour
         if (other.gameObject.name == "Area Check" && !other.gameObject.GetComponentInParent<BloodDoorHandler>().sacrificed)
         {
             nearSacrifice = true;
-            nearSacObject = other.gameObject.GetComponentInParent<BloodDoorHandler>().barrier;
+            nearSacObj = other.gameObject.GetComponentInParent<BloodDoorHandler>().barrier;
         }
+
+        if (other.gameObject.name == "Holding Switch")
+        {
+            if (!other.gameObject.GetComponent<Switch>().active)
+            {
+                nearSwitch = true;
+                nearSwitchObj = other.gameObject;
+                switchScript = other.gameObject.GetComponent<Switch>();
+            }
+        }
+
     }
 
 

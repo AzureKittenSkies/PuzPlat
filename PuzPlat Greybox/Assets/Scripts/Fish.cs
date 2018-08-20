@@ -28,7 +28,9 @@ public class Fish : MonoBehaviour
     public GameObject target;
     public GameObject player;
     public GameObject sacTarget;
+    public GameObject switchTarget;
 
+    public Player playerScript;
 
     public float speed;
     public float rotationSpeed = 10f;
@@ -42,6 +44,7 @@ public class Fish : MonoBehaviour
     {
         speed = Random.Range(0.5f, 5f);
         target = this.gameObject;
+        playerScript = player.GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -55,15 +58,25 @@ public class Fish : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
 
-        else if (target.name == "Player" && Input.GetKeyDown(KeyCode.J))
+        else if (target.name == "Player" && Input.GetKeyDown(KeyCode.J) && playerScript.nearSacrifice)
         {
-            target = sacTarget;
+            target = playerScript.nearSacObj;
         }
 
-        else if (target == sacTarget && Input.GetKeyUp(KeyCode.J))
+        else if (target == sacTarget && Input.GetKeyUp(KeyCode.J) && playerScript.nearSacrifice)
         {
             target = player;
         }
+
+        else if (target == player && Input.GetKeyDown(KeyCode.J) && playerScript.nearSwitch)
+        {
+            target = playerScript.nearSwitchObj;
+        }
+        else if (target == switchTarget && Input.GetKeyDown(KeyCode.J) && playerScript.nearSwitch)
+        {
+            target = player;
+        }
+
 
 
     }
@@ -79,5 +92,8 @@ public class Fish : MonoBehaviour
     }
 
 
-
+    private void OnDestroy()
+    {
+        //playerScript.
+    }
 }
