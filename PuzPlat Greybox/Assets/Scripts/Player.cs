@@ -87,51 +87,51 @@ public class Player : MonoBehaviour
         moveDirection.y -= gravity * Time.deltaTime;
         controller.Move(moveDirection * Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            //anim.SetBool("Holding", true);
-            //fishList[fishList.Count].gameObject.GetComponent<Fish>().target = sacrificeTarget;
+        //if (Input.GetKeyDown(KeyCode.J))
+        //{
+        //    anim.SetBool("Holding", true);
+        //    fishList[fishList.Count].gameObject.GetComponent<Fish>().target = sacrificeTarget;
 
-            if (nearSacrifice && fishList.Count > 0)
-            {
-                curFish = fishList[0];
-                // anim.SetBool("Sacrificing", true);
-                GameObject.Destroy(curFish);
-                fishList.RemoveAt(0);
-                nearSacObj.GetComponentInParent<BloodDoorHandler>().sacrificed = true;
-                Destroy(nearSacObj);
-            }
+        //    if (nearSacrifice && fishList.Count > 0)
+        //    {
+        //        curFish = fishList[0];
+        //        anim.SetBool("Sacrificing", true);
+        //        GameObject.Destroy(curFish);
+        //        fishList.RemoveAt(0);
+        //        nearSacObj.GetComponentInParent<BloodDoorHandler>().sacrificed = true;
+        //        Destroy(nearSacObj);
+        //    }
 
-            if (nearSwitch && fishList.Count > 0 && !switchScript.active)
-            {
-                curFish = fishList[0];
-                nearSwitchObj.GetComponent<Switch>().active = true;
-                GameObject.Destroy(curFish);
-                fishList.RemoveAt(0);
-                //fishList[0].GetComponent<Fish>().target = nearSwitchObj;
-            }
+        //    if (nearSwitch && fishList.Count > 0 && !switchScript.active)
+        //    {
+        //        curFish = fishList[0];
+        //        nearSwitchObj.GetComponent<Switch>().active = true;
+        //        GameObject.Destroy(curFish);
+        //        fishList.RemoveAt(0);
+        //        //fishList[0].GetComponent<Fish>().target = nearSwitchObj;
+        //    }
 
-            if (nearSwitch && switchScript.active)
-            {
-                // attatch a fish to the 
-                Instantiate(fishSpawn);
-            }
+        //    if (nearSwitch && switchScript.active)
+        //    {
+        //        // attatch a fish to the 
+        //        Instantiate(fishSpawn);
+        //    }
 
-        }
+        //}
 
-        if (Input.GetKeyUp(KeyCode.J))
-        {
-            if (fishList.Count >= 0)
-            {
-                //anim.SetBool("Holding", false);
-                fishList[0].gameObject.GetComponent<Fish>().target = this.gameObject;
-            }
-        }
+        //if (Input.GetKeyUp(KeyCode.J))
+        //{
+        //    if (fishList.Count >= 0)
+        //    {
+        //        anim.SetBool("Holding", false);
+        //        fishList[0].gameObject.GetComponent<Fish>().target = this.gameObject;
+        //    }
+        //}
 
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            Debug.Log(fishList.Count);
-        }
+        //if (Input.GetKeyDown(KeyCode.Return))
+        //{
+        //    Debug.Log(fishList.Count);
+        //}
 
 
 
@@ -151,17 +151,6 @@ public class Player : MonoBehaviour
             nearSacrifice = true;
             nearSacObj = other.gameObject.GetComponentInParent<BloodDoorHandler>().barrier;
         }
-
-        if (other.gameObject.name == "Holding Switch")
-        {
-            if (!other.gameObject.GetComponent<Switch>().active)
-            {
-                nearSwitch = true;
-                nearSwitchObj = other.gameObject;
-                switchScript = other.gameObject.GetComponent<Switch>();
-            }
-        }
-
     }
 
 

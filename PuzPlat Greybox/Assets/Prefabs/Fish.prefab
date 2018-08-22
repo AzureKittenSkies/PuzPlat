@@ -98,7 +98,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1947534918735658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 377, y: 1, z: 13}
+  m_LocalPosition: {x: 366.42886, y: 1, z: 4.4600277}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4743642081185728}
@@ -212,7 +212,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1882412038354152}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -233,6 +233,7 @@ MonoBehaviour:
   catchupSpeed: 0
   rotationSpeed: 5
   distConstrain: 5
+  targetPlayer: 0
   rigid: {fileID: 54680672873545488}
   target: {fileID: 0}
   player: {fileID: 1834507566261134, guid: a28581ceb4b064540a7858d9056bd7c3, type: 2}
@@ -259,7 +260,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1475277844566942}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.75

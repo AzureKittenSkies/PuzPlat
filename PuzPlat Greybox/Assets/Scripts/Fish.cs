@@ -30,6 +30,9 @@ public class Fish : MonoBehaviour
     public float catchupSpeed;
     public float rotationSpeed = 10f;
     public float distConstrain = 5f;
+
+    public bool targetPlayer = false;
+
     #endregion
 
     #region Object References
@@ -66,7 +69,15 @@ public class Fish : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (target == player)
+        {
+            targetPlayer = true;
+        }
 
+        else
+        {
+            targetPlayer = false;
+        }
 
         if (target != null && target != this.gameObject)
         {
@@ -78,30 +89,30 @@ public class Fish : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
 
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            if (target == player)
-            {
-                if (playerScript.nearSacrifice)
-                {
-                    target = playerScript.nearSacObj;
-                }
+        //if (Input.GetKeyDown(KeyCode.J))
+        //{
+        //    if (target == player)
+        //    {
+        //        if (playerScript.nearSacrifice)
+        //        {
+        //            target = playerScript.nearSacObj;
+        //        }
 
-                if (playerScript.nearSwitch)
-                {
-                    target = playerScript.nearSwitchObj;
-                }
-            }
-            if (target == switchTarget && playerScript.nearSwitch)
-            {
-                target = player;
-            }
-        }
+        //        if (playerScript.nearSwitch)
+        //        {
+        //            target = playerScript.nearSwitchObj;
+        //        }
+        //    }
+        //    if (target == switchTarget && playerScript.nearSwitch)
+        //    {
+        //        target = player;
+        //    }
+        //}
 
-        else if (Input.GetKeyUp(KeyCode.J) && target == sacTarget && playerScript.nearSacrifice)
-        {
-            target = player;
-        }
+        //else if (Input.GetKeyUp(KeyCode.J) && target == sacTarget && playerScript.nearSacrifice)
+        //{
+        //    target = player;
+        //}
 
     }
 
@@ -117,15 +128,19 @@ public class Fish : MonoBehaviour
             curSpeed = catchupSpeed;
         }
     }
-    
+
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.name == "Player")
         {
-            target = other.gameObject;
-            other.gameObject.GetComponent<Player>().fishList.Add(this.gameObject);
-            this.gameObject.GetComponent<Collider>().enabled = false;
+            if (!other.gameObject.GetComponent<Player>().fishList.Contains(this.gameObject))
+            {
+                target = other.gameObject;
+                other.gameObject.GetComponent<Player>().fishList.Add(this.gameObject);
+                //this.gameObject.GetComponent<Collider>().enabled = false;
+            }
+
         }
     }
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44825363, g: 0.49828196, b: 0.5755824, a: 1}
+  m_IndirectSpecularColor: {r: 0.4482537, g: 0.49828207, b: 0.5755824, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1573,6 +1573,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1834507566261134, guid: a28581ceb4b064540a7858d9056bd7c3, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 136489831683904722, guid: a28581ceb4b064540a7858d9056bd7c3,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a28581ceb4b064540a7858d9056bd7c3, type: 2}
   m_IsPrefabAsset: 0
@@ -1751,27 +1760,6 @@ Prefab:
     - target: {fileID: 1947534918735658, guid: f8a445e12218ae7479a18af460f8dcd1, type: 2}
       propertyPath: m_Name
       value: Fish (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114935217567791572, guid: f8a445e12218ae7479a18af460f8dcd1,
-        type: 2}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114935217567791572, guid: f8a445e12218ae7479a18af460f8dcd1,
-        type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1834507566261134, guid: a28581ceb4b064540a7858d9056bd7c3,
-        type: 2}
-    - target: {fileID: 135372263270273524, guid: f8a445e12218ae7479a18af460f8dcd1,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 65491677956362376, guid: f8a445e12218ae7479a18af460f8dcd1,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8a445e12218ae7479a18af460f8dcd1, type: 2}
@@ -4985,8 +4973,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5, y: 2, z: 5}
-  m_Center: {x: 0.5, y: 0.5, z: 0}
+  m_Size: {x: 8.295624, y: 3.7271652, z: 10.175139}
+  m_Center: {x: 2.147812, y: 1.3635826, z: -0.029310703}
 --- !u!4 &633847467
 Transform:
   m_ObjectHideFlags: 0
@@ -5017,6 +5005,10 @@ MonoBehaviour:
   matActive: {fileID: 2100000, guid: 666400d09d1c42544a5d37f128a8bbbd, type: 2}
   matInactive: {fileID: 2100000, guid: 844d6ca09c9cd154cad573f37ce31417, type: 2}
   thisMat: {fileID: 0}
+  heldFish: {fileID: 0}
+  holdingSwitch: {fileID: 0}
+  playerScript: {fileID: 0}
+  player: {fileID: 0}
 --- !u!43 &638025866
 Mesh:
   m_ObjectHideFlags: 0
