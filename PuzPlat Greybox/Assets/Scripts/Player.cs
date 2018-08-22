@@ -4,31 +4,56 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
+    #region Movement variables
+    [Header("Movement Variables")]
+    [Space(5)]
     public float speed = 0f;
     public float walkSpeed = 5.0f;
     public float runSpeed = 7.5f;
-    public float jumpSpeed = 10f;
+    public float jumpSpeed = 25f;
     public float gravity = 20.0f;
     public CharacterController controller;
     private Vector3 moveDirection = Vector3.zero;
+    #endregion
 
-    public bool nearSacrifice, nearSwitch;
+    #region Jumping varlables
+    [Header("Jumping Variables")]
+    [Space(5)]
+    public int curJump = 0;
+
+    #endregion
+
+    #region Sacrifice and switch variables
+    [Header("Sacrifice and Switch Variables")]
+    [Space(5)]
+    public bool nearSacrifice;
+    public bool nearSwitch;
     public GameObject nearSacObj, nearSwitchObj;
     public Switch switchScript;
+    public GameObject sacrificeTarget;
+    #endregion
 
-
+    #region Fish list variables
+    [Header("Fish List Variables")]
+    [Space(5)]
     public List<GameObject> fishList = new List<GameObject>();
     public GameObject curFish;
-
-
-    public Animator anim;
-
-    public GameObject sacrificeTarget;
-
-    public Transform cam;
-
+    public GameObject fishSpawn;
     public int fishIndex = 0;
+    #endregion
 
+    #region Animations
+    [Header("Animations")]
+    [Space(5)]
+    public Animator anim;
+    #endregion
+
+    #region Camera
+    [Header("Camera")]
+    [Space(5)]
+    public Transform cam;
+    #endregion
 
 
     // Update is called once per frame
@@ -52,6 +77,11 @@ public class Player : MonoBehaviour
             {
                 moveDirection.y = jumpSpeed;
             }
+        }
+
+        if (curJump >= fishList.Count)
+        {
+
         }
 
         moveDirection.y -= gravity * Time.deltaTime;
@@ -84,6 +114,7 @@ public class Player : MonoBehaviour
             if (nearSwitch && switchScript.active)
             {
                 // attatch a fish to the 
+                Instantiate(fishSpawn);
             }
 
         }
@@ -106,6 +137,8 @@ public class Player : MonoBehaviour
 
     }
 
+
+    // move trigger detection into the relevant object's scripts
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "Fish")

@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 136489831683904722}
   - component: {fileID: 143568865472095030}
   - component: {fileID: 114735176520669056}
+  - component: {fileID: 114879987543827676}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -205,9 +206,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e05ca1b350c383418eb403ff87efb43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hideCursor: 0
+  hideCursor: 1
   target: {fileID: 4594962627736220}
-  offset: {x: 0, y: 1, z: 0}
+  offset: {x: 0, y: 0, z: 0}
   maxDistance: 5
   xSpeed: 120
   ySpeed: 120
@@ -220,7 +221,7 @@ MonoBehaviour:
   rayDistance: 1000
   ignoreLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
 --- !u!114 &114735176520669056
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -235,14 +236,35 @@ MonoBehaviour:
   speed: 5
   walkSpeed: 5
   runSpeed: 7.5
-  jumpSpeed: 6
+  jumpSpeed: 10
   gravity: 20
   controller: {fileID: 143568865472095030}
+  curJump: 0
   nearSacrifice: 0
-  fishList: []
-  anim: {fileID: 0}
+  nearSwitch: 0
+  nearSacObj: {fileID: 0}
+  nearSwitchObj: {fileID: 0}
+  switchScript: {fileID: 0}
   sacrificeTarget: {fileID: 1968721579142048}
-  cam: {fileID: 0}
+  fishList: []
+  curFish: {fileID: 0}
+  fishSpawn: {fileID: 0}
+  fishIndex: 0
+  anim: {fileID: 0}
+  cam: {fileID: 4978312436474132}
+--- !u!114 &114879987543827676
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1834507566261134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d09763a32db05e45a2e65e45d704230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 114735176520669056}
+  cam: {fileID: 114502010633774476}
 --- !u!136 &136489831683904722
 CapsuleCollider:
   m_ObjectHideFlags: 1

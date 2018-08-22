@@ -22,27 +22,43 @@ public class Fish : MonoBehaviour
      */
 
 
-    #region Variables
+    #region Movement Variables
+    [Header("Movement Variable")]
+    [Space(5)]
+    public float curSpeed;
+    public float followSpeed;
+    public float catchupSpeed;
+    public float rotationSpeed = 10f;
+    public float distConstrain = 5f;
+    #endregion
 
+    #region Object References
+    [Header("Object References")]
+    [Space(5)]
     public Rigidbody rigid;
     public GameObject target;
     public GameObject player;
     public GameObject sacTarget;
     public GameObject switchTarget;
-
-    public Player playerScript;
-
-    public float speed;
-    public float rotationSpeed = 10f;
-
     #endregion
+
+    #region Player Script Reference
+    [Header("Player Script Reference")]
+    [Space(5)]
+    public Player playerScript;
+    #endregion
+
+
+
+
 
 
 
     // Use this for initialization
     void Start()
     {
-        speed = Random.Range(0.5f, 5f);
+        followSpeed = Random.Range(0.5f, 5f);
+        catchupSpeed = followSpeed * 2.5f;
         target = this.gameObject;
         playerScript = player.GetComponent<Player>();
     }
@@ -50,36 +66,58 @@ public class Fish : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         if (target != null && target != this.gameObject)
         {
-            rigid.velocity = transform.forward * speed;
+            rigid.velocity = transform.forward * curSpeed;
+
+            FishDistConstrain();
 
             var targetRotation = Quaternion.LookRotation(target.transform.position - transform.position);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
 
-        else if (target.name == "Player" && Input.GetKeyDown(KeyCode.J) && playerScript.nearSacrifice)
+        if (Input.GetKeyDown(KeyCode.J))
         {
-            target = playerScript.nearSacObj;
+            if (target == player)
+            {
+                if (playerScript.nearSacrifice)
+                {
+                    target = playerScript.nearSacObj;
+                }
+
+                if (playerScript.nearSwitch)
+                {
+                    target = playerScript.nearSwitchObj;
+                }
+            }
+            if (target == switchTarget && playerScript.nearSwitch)
+            {
+                target = player;
+            }
         }
 
-        else if (target == sacTarget && Input.GetKeyUp(KeyCode.J) && playerScript.nearSacrifice)
+        else if (Input.GetKeyUp(KeyCode.J) && target == sacTarget && playerScript.nearSacrifice)
         {
             target = player;
         }
-
-        else if (target == player && Input.GetKeyDown(KeyCode.J) && playerScript.nearSwitch)
-        {
-            target = playerScript.nearSwitchObj;
-        }
-        else if (target == switchTarget && Input.GetKeyDown(KeyCode.J) && playerScript.nearSwitch)
-        {
-            target = player;
-        }
-
-
 
     }
+
+    private void FishDistConstrain()
+    {
+        float dist = Vector3.Distance(player.transform.position, this.transform.position);
+        if (dist <= distConstrain)
+        {
+            curSpeed = followSpeed;
+        }
+        else if (dist > distConstrain)
+        {
+            curSpeed = catchupSpeed;
+        }
+    }
+    
 
     private void OnTriggerEnter(Collider other)
     {
