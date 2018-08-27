@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4482537, g: 0.49828207, b: 0.5755824, a: 1}
+  m_IndirectSpecularColor: {r: 0.44825363, g: 0.49828196, b: 0.5755824, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4958,7 +4958,7 @@ GameObject:
   - component: {fileID: 633847468}
   m_Layer: 0
   m_Name: Holding Switch
-  m_TagString: Untagged
+  m_TagString: Switch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5954,73 +5954,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.2389584, z: 4}
   m_Center: {x: 0, y: 0.119478986, z: -1.5}
---- !u!1001 &911887874
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4875899184061516, guid: f8a445e12218ae7479a18af460f8dcd1, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 375.91013
-      objectReference: {fileID: 0}
-    - target: {fileID: 4875899184061516, guid: f8a445e12218ae7479a18af460f8dcd1, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4875899184061516, guid: f8a445e12218ae7479a18af460f8dcd1, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -12.40189
-      objectReference: {fileID: 0}
-    - target: {fileID: 4875899184061516, guid: f8a445e12218ae7479a18af460f8dcd1, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4875899184061516, guid: f8a445e12218ae7479a18af460f8dcd1, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4875899184061516, guid: f8a445e12218ae7479a18af460f8dcd1, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4875899184061516, guid: f8a445e12218ae7479a18af460f8dcd1, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4875899184061516, guid: f8a445e12218ae7479a18af460f8dcd1, type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1947534918735658, guid: f8a445e12218ae7479a18af460f8dcd1, type: 2}
-      propertyPath: m_Name
-      value: Fish (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114935217567791572, guid: f8a445e12218ae7479a18af460f8dcd1,
-        type: 2}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114935217567791572, guid: f8a445e12218ae7479a18af460f8dcd1,
-        type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1834507566261134, guid: a28581ceb4b064540a7858d9056bd7c3,
-        type: 2}
-    - target: {fileID: 135372263270273524, guid: f8a445e12218ae7479a18af460f8dcd1,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 65491677956362376, guid: f8a445e12218ae7479a18af460f8dcd1,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f8a445e12218ae7479a18af460f8dcd1, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1001 &983190171
 Prefab:
   m_ObjectHideFlags: 0
@@ -7953,6 +7886,52 @@ Mesh:
   m_MeshMetrics[0]: 1
   m_MeshMetrics[1]: 1
   m_MeshOptimized: 0
+--- !u!1001 &1158870767
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4875899184061516, guid: f8a445e12218ae7479a18af460f8dcd1, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 375.91013
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875899184061516, guid: f8a445e12218ae7479a18af460f8dcd1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875899184061516, guid: f8a445e12218ae7479a18af460f8dcd1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -12.40189
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875899184061516, guid: f8a445e12218ae7479a18af460f8dcd1, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875899184061516, guid: f8a445e12218ae7479a18af460f8dcd1, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875899184061516, guid: f8a445e12218ae7479a18af460f8dcd1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875899184061516, guid: f8a445e12218ae7479a18af460f8dcd1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875899184061516, guid: f8a445e12218ae7479a18af460f8dcd1, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947534918735658, guid: f8a445e12218ae7479a18af460f8dcd1, type: 2}
+      propertyPath: m_Name
+      value: Fish (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f8a445e12218ae7479a18af460f8dcd1, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1223463390
 GameObject:
   m_ObjectHideFlags: 0
@@ -10422,14 +10401,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114935217567791572, guid: f8a445e12218ae7479a18af460f8dcd1,
         type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1894547948}
-    - target: {fileID: 114935217567791572, guid: f8a445e12218ae7479a18af460f8dcd1,
-        type: 2}
       propertyPath: sacTarget
       value: 
       objectReference: {fileID: 1277178445}
+    - target: {fileID: 114935217567791572, guid: f8a445e12218ae7479a18af460f8dcd1,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1894547948}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8a445e12218ae7479a18af460f8dcd1, type: 2}
   m_IsPrefabAsset: 0

@@ -98,7 +98,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1947534918735658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 366.42886, y: 1, z: 4.4600277}
+  m_LocalPosition: {x: 375.91013, y: 1, z: -12.40189}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4743642081185728}
@@ -231,16 +231,20 @@ MonoBehaviour:
   curSpeed: 0
   followSpeed: 0
   catchupSpeed: 0
+  curRotSpeed: 0
   rotationSpeed: 5
+  orbitRotationSpeed: 0
   distConstrain: 5
+  minDist: 5
   targetPlayer: 0
   rigid: {fileID: 54680672873545488}
   target: {fileID: 0}
-  player: {fileID: 1834507566261134, guid: a28581ceb4b064540a7858d9056bd7c3, type: 2}
   sacTarget: {fileID: 0}
   switchTarget: {fileID: 0}
   playerScript: {fileID: 114735176520669056, guid: a28581ceb4b064540a7858d9056bd7c3,
     type: 2}
+  player: {fileID: 1834507566261134, guid: a28581ceb4b064540a7858d9056bd7c3, type: 2}
+  waitingForPlayer: 1
 --- !u!135 &135265952787893700
 SphereCollider:
   m_ObjectHideFlags: 1
