@@ -22,7 +22,7 @@ public class Fish : MonoBehaviour
      */
 
 
-    #region Movement Variables
+    #region General Variables
     [Header("Movement Variable")]
     [Space(5)]
     public float curSpeed;
@@ -32,13 +32,25 @@ public class Fish : MonoBehaviour
     public float rotationSpeed = 10f;
     public float orbitRotationSpeed;
     public float distConstrain = 5f;
-
-
     public float minDist = 5f;
-
     public bool targetPlayer = false;
 
+    public bool sacrificed = false;
+
+    
+
     #endregion
+
+    #region Animation
+    [Header("Animation")]
+    [Space(5)]
+    public Animator anim;
+    public Animation sacrificeAnim;
+    public float sacAnimDuration;
+
+
+    #endregion
+
 
     #region Object References
     [Header("Object References")]
@@ -61,11 +73,6 @@ public class Fish : MonoBehaviour
     #endregion
 
 
-
-
-
-
-
     // Use this for initialization
     void Start()
     {
@@ -74,8 +81,18 @@ public class Fish : MonoBehaviour
         target = this.gameObject;
         playerScript = player.GetComponent<Player>();
         orbitRotationSpeed = followSpeed / minDist;
-
+        
     }
+
+    private void Move()
+    {
+        rigid.velocity = transform.forward * curSpeed;
+
+
+        var targetRotation = Quaternion.LookRotation((target.transform.position) - transform.position);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, curRotSpeed * Time.deltaTime);
+    }
+    
 
     // Update is called once per frame
     void Update()
@@ -83,17 +100,23 @@ public class Fish : MonoBehaviour
         if (target.CompareTag("Player"))
         {
 
-            rigid.velocity = transform.forward * curSpeed;
-
+            Move();
             FishDistConstrain();
 
-            var targetRotation = Quaternion.LookRotation((target.transform.position)- transform.position);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, curRotSpeed * Time.deltaTime);
         }
 
-        if (target.CompareTag("Switch"))
+        if (target.CompareTag("Switch") /*&& !anim.GetBool("Switch") */ )
         {
-            return;
+            //anim.SetBool("Switch", true);
+
+            Move();
+        }
+
+        if (sacrificed)
+        {
+            //anim.SetBool("Sacrificed", true);
+            sacAnimDuration = anim.GetCurrentAnimatorStateInfo(0).length;
+            Destroy(this.gameObject, sacAnimDuration);
         }
 
     }
@@ -117,7 +140,6 @@ public class Fish : MonoBehaviour
         }
     }
 
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.name == "Player" && waitingForPlayer)
@@ -134,9 +156,4 @@ public class Fish : MonoBehaviour
         }
     }
     
-
-    private void OnDestroy()
-    {
-        //playerScript.
-    }
 }

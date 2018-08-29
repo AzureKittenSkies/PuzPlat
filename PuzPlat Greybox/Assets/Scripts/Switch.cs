@@ -56,13 +56,15 @@ public class Switch : MonoBehaviour
     {
 
     }
-
-    private void OnTriggerEnter(Collider other)
+    
+    private void OnTriggerStay (Collider other)
     {
+
 
         // if the other collider is tagged "player"
         if (other.CompareTag("Player"))
         {
+            Debug.Log("Other is tagged Player");
             player = other.gameObject;
             // set the playerScript variable to reference the player script attatched to the player
             playerScript = other.gameObject.GetComponent<Player>();
@@ -70,11 +72,12 @@ public class Switch : MonoBehaviour
             // if the interact key is pressed 
             if (Input.GetKeyDown(KeyCode.J))
             {
+                Debug.Log("Pressed interact key");
                 // and this switch is active
                 if (active)
                 {
                     // then get the fish held in switch to target player
-                    heldFish.GetComponent<Fish>().target = player;
+                    heldFish.GetComponent<Fish>().waitingForPlayer = true;
                     // and add it to the end of the fish list
                     playerScript.fishList.Add(heldFish);
                     // set the displaying material to be the inactive material
@@ -84,8 +87,10 @@ public class Switch : MonoBehaviour
                 // or if the switch is not active
                 else if (!active)
                 {
+                    // disable fish following player.
+                    playerScript.fishList[0].GetComponent<Fish>().waitingForPlayer = false;
                     // then get a fish to target the holding switch
-                    playerScript.fishList[0].GetComponent<Fish>().target = holdingSwitch;
+                    playerScript.fishList[0].GetComponent<Fish>().target = this.gameObject;
                     heldFish = playerScript.fishList[0];
                     // remove the held fish from the fishList
                     playerScript.fishList.RemoveAt(0);

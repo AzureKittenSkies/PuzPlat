@@ -1761,6 +1761,17 @@ Prefab:
       propertyPath: m_Name
       value: Fish (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114935217567791572, guid: f8a445e12218ae7479a18af460f8dcd1,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1834507566261134, guid: a28581ceb4b064540a7858d9056bd7c3,
+        type: 2}
+    - target: {fileID: 95666566444377508, guid: f8a445e12218ae7479a18af460f8dcd1,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 89a4bc0011a43d7428a23964291b614b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8a445e12218ae7479a18af460f8dcd1, type: 2}
   m_IsPrefabAsset: 0
@@ -7929,6 +7940,12 @@ Prefab:
       propertyPath: m_Name
       value: Fish (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 114935217567791572, guid: f8a445e12218ae7479a18af460f8dcd1,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1834507566261134, guid: a28581ceb4b064540a7858d9056bd7c3,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8a445e12218ae7479a18af460f8dcd1, type: 2}
   m_IsPrefabAsset: 0
@@ -10409,7 +10426,9 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1894547948}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 135372263270273524, guid: f8a445e12218ae7479a18af460f8dcd1, type: 2}
+    - {fileID: 65491677956362376, guid: f8a445e12218ae7479a18af460f8dcd1, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: f8a445e12218ae7479a18af460f8dcd1, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1894547948 stripped
