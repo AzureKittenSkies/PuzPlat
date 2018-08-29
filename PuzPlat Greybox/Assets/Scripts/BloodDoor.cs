@@ -21,13 +21,15 @@ public class BloodDoor : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             if (Input.GetKeyDown(KeyCode.J) && !sacrificed)
             {
-                other.GetComponent<Fish>().sacrificed = true;
+                other.gameObject.GetComponent<Player>().fishList.RemoveAt(0);
+                other.gameObject.GetComponent<Player>().fishList[0].GetComponent<Fish>().sacrificed = true;
+                sacrificed = true;
             }
         }
     }

@@ -17,10 +17,7 @@ public class Fish : MonoBehaviour
         List of fish, add and remove gameobjects to prevent errors
 
         Fish, once activated, cannot be further than a certain distance from the player.
-
-
      */
-
 
     #region General Variables
     [Header("Movement Variable")]
@@ -36,9 +33,6 @@ public class Fish : MonoBehaviour
     public bool targetPlayer = false;
 
     public bool sacrificed = false;
-
-    
-
     #endregion
 
     #region Animation
@@ -46,11 +40,8 @@ public class Fish : MonoBehaviour
     [Space(5)]
     public Animator anim;
     public Animation sacrificeAnim;
-    public float sacAnimDuration;
-
-
+    public float sacAnimDuration = 2.5f;
     #endregion
-
 
     #region Object References
     [Header("Object References")]
@@ -65,7 +56,7 @@ public class Fish : MonoBehaviour
     [Header("Player Script Reference")]
     [Space(5)]
     public Player playerScript;
-    public GameObject player;
+    public GameObject playerFollow;
     public bool waitingForPlayer = true;
 
     public LayerMask layerMask;
@@ -79,7 +70,7 @@ public class Fish : MonoBehaviour
         followSpeed = Random.Range(2.5f, 7.5f);
         catchupSpeed = followSpeed * 2.5f;
         target = this.gameObject;
-        playerScript = player.GetComponent<Player>();
+        playerScript = playerFollow.GetComponent<Player>();
         orbitRotationSpeed = followSpeed / minDist;
         
     }
@@ -99,23 +90,26 @@ public class Fish : MonoBehaviour
     {
         if (target.CompareTag("Player"))
         {
-
             Move();
             FishDistConstrain();
 
         }
 
-        if (target.CompareTag("Switch") /*&& !anim.GetBool("Switch") */ )
+        if (target.CompareTag("Switch") && !waitingForPlayer )
         {
             //anim.SetBool("Switch", true);
-
             Move();
+        }
+
+        if (target.CompareTag("Switch") && waitingForPlayer)
+        {
+            target = playerFollow;
         }
 
         if (sacrificed)
         {
             //anim.SetBool("Sacrificed", true);
-            sacAnimDuration = anim.GetCurrentAnimatorStateInfo(0).length;
+            //sacAnimDuration = anim.GetCurrentAnimatorStateInfo(0).length;
             Destroy(this.gameObject, sacAnimDuration);
         }
 
@@ -123,7 +117,7 @@ public class Fish : MonoBehaviour
 
     private void FishDistConstrain()
     {
-        float dist = Vector3.Distance(player.transform.position, this.transform.position);
+        float dist = Vector3.Distance(playerFollow.transform.position, this.transform.position);
         if (dist <= distConstrain)
         {
             curRotSpeed = rotationSpeed;
@@ -147,7 +141,7 @@ public class Fish : MonoBehaviour
             if (!other.gameObject.GetComponent<Player>().fishList.Contains(this.gameObject))
             {
                 target = other.gameObject;
-                player = other.gameObject;
+                playerFollow = other.gameObject;
                 other.gameObject.GetComponent<Player>().fishList.Add(this.gameObject);
                 //this.gameObject.GetComponent<Collider>().enabled = false;
                 waitingForPlayer = false;

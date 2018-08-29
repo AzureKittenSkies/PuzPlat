@@ -82,6 +82,7 @@ public class Switch : MonoBehaviour
                     playerScript.fishList.Add(heldFish);
                     // set the displaying material to be the inactive material
                     thisMat = matInactive;
+                    active = false;
                 }
 
                 // or if the switch is not active
@@ -96,6 +97,7 @@ public class Switch : MonoBehaviour
                     playerScript.fishList.RemoveAt(0);
                     // set the displaying mterial to be the inactive material
                     thisMat = matActive;
+                    active = true;
                 }
             }
         }
