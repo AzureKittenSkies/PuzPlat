@@ -11,6 +11,7 @@ public class BloodDoor : MonoBehaviour
 
     public bool sacrificed = false;
 
+    public Vector3 knockback;
 
     // Update is called once per frame
     void Update()
@@ -25,12 +26,26 @@ public class BloodDoor : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (Input.GetKeyDown(KeyCode.J) && !sacrificed)
+            if (Input.GetKeyDown(KeyCode.J) && !sacrificed && other.gameObject.GetComponent<Player>().fishList.Count > 0)
             {
                 other.gameObject.GetComponent<Player>().fishList.RemoveAt(0);
                 other.gameObject.GetComponent<Player>().fishList[0].GetComponent<Fish>().sacrificed = true;
                 sacrificed = true;
             }
+            else if (other.gameObject.GetComponent<Player>().fishList.Count <= 0)
+            {
+                knockback = other.transform.position - transform.position;
+
+                if (knockback.magnitude > 0.2)
+                {
+                    other.gameObject.GetComponent<CharacterController>().Move(knockback * Time.deltaTime);
+                }
+
+                knockback = Vector3.Lerp(knockback, Vector3.zero, 5 * Time.deltaTime);
+                
+
+            }
+            
         }
     }
 
