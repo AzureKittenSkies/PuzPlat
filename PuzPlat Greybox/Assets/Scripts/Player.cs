@@ -99,14 +99,21 @@ public class Player : MonoBehaviour
     }
 
 
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerStay(Collider other)
     {
-        if (collision.gameObject.tag == "Moving Platform")
+        Debug.Log("Collided with " + other.gameObject.tag);
+        if (other.gameObject.tag == "Moving Platform")
         {
-            this.transform.parent = collision.gameObject.transform;
+            Debug.Log("collided with moving platform");
+            this.transform.SetParent(other.gameObject.transform);
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        this.transform.SetParent(null);
+    }
+
 
 
 }
