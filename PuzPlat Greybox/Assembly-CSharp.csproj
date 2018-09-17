@@ -114,6 +114,7 @@
     <Compile Include="Assets\Scripts\ExitPortal.cs" />
     <Compile Include="Assets\Scripts\Fish.cs" />
     <Compile Include="Assets\Scripts\Knockback.cs" />
+    <Compile Include="Assets\Scripts\Menu.cs" />
     <Compile Include="Assets\Scripts\MovingPlatform.cs" />
     <Compile Include="Assets\Scripts\Orbit.cs" />
     <Compile Include="Assets\Scripts\PickUp.cs" />
