@@ -25,12 +25,15 @@ public class Fish : MonoBehaviour
     public float curSpeed;
     public float followSpeed;
     public float catchupSpeed;
+    public float tempCatchupSpeed;
     public float curRotSpeed;
     public float rotationSpeed = 10f;
     public float orbitRotationSpeed;
     public float distConstrain = 5f;
-    public float minDist = 5f;
+    public float minDist = 1.5f;
     public bool targetPlayer = false;
+    public float switchVel = 1.5f;
+    public float switchRot = 5f;
 
     public bool sacrificed = false;
     #endregion
@@ -67,11 +70,12 @@ public class Fish : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        followSpeed = Random.Range(2.5f, 7.5f);
+        followSpeed = Random.Range(1.5f, 2.5f);
         catchupSpeed = followSpeed * 2.5f;
         target = this.gameObject;
         playerScript = playerFollow.GetComponent<Player>();
         orbitRotationSpeed = followSpeed / minDist;
+        tempCatchupSpeed = catchupSpeed;
         
     }
 
@@ -98,11 +102,16 @@ public class Fish : MonoBehaviour
         if (target.CompareTag("Switch") && !waitingForPlayer )
         {
             //anim.SetBool("Switch", true);
+            curSpeed = switchVel;
+            curRotSpeed = switchRot;
             Move();
         }
 
         if (target.CompareTag("Switch") && waitingForPlayer)
         {
+            curSpeed = followSpeed;
+            curRotSpeed = rotationSpeed;
+
             target = playerFollow;
         }
 
@@ -118,20 +127,29 @@ public class Fish : MonoBehaviour
     private void FishDistConstrain()
     {
         float dist = Vector3.Distance(playerFollow.transform.position, this.transform.position);
-        if (dist <= distConstrain)
-        {
-            curRotSpeed = rotationSpeed;
-            curSpeed = followSpeed;
-        }
         if (dist > distConstrain)
         {
             curRotSpeed = rotationSpeed;
-            curSpeed = catchupSpeed;
+            StartCoroutine(SpeedIncrease(tempCatchupSpeed));
+            curSpeed = tempCatchupSpeed;
+        }
+        if (dist <= distConstrain)
+        {
+            tempCatchupSpeed = catchupSpeed;
+            curRotSpeed = rotationSpeed;
+            curSpeed = followSpeed;
         }
         else if (dist < minDist)
         {
             curRotSpeed = orbitRotationSpeed;
         }
+        Debug.Log(curRotSpeed);
+    }
+
+    IEnumerator SpeedIncrease(float speed)
+    {
+        speed += 0.1f;
+        yield return speed;
     }
 
     private void OnTriggerEnter(Collider other)

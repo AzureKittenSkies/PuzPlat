@@ -127,7 +127,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1947534918735658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 377, y: 1, z: 13}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4188219553875984}
@@ -266,11 +266,13 @@ MonoBehaviour:
   followSpeed: 0
   catchupSpeed: 0
   curRotSpeed: 0
-  rotationSpeed: 5
+  rotationSpeed: 10
   orbitRotationSpeed: 0
-  distConstrain: 5
-  minDist: 5
+  distConstrain: 2.25
+  minDist: 1
   targetPlayer: 0
+  switchVel: 1.5
+  switchRot: 5
   sacrificed: 0
   anim: {fileID: 0}
   sacrificeAnim: {fileID: 0}
@@ -279,8 +281,7 @@ MonoBehaviour:
   target: {fileID: 0}
   sacTarget: {fileID: 0}
   switchTarget: {fileID: 0}
-  playerScript: {fileID: 114735176520669056, guid: a28581ceb4b064540a7858d9056bd7c3,
-    type: 2}
+  playerScript: {fileID: 0}
   playerFollow: {fileID: 0}
   waitingForPlayer: 1
   layerMask:
@@ -296,5 +297,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.77
+  m_Center: {x: 0, y: 0.35, z: 0}
