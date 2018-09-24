@@ -9,6 +9,7 @@ public class MovingPlatform : MonoBehaviour
     public int checkpointIndex;
     public Transform[] checkpoint;
     public Transform target;
+    public GameObject checkpointParent;
 
     public Vector3 platDestination;
 
@@ -36,7 +37,7 @@ public class MovingPlatform : MonoBehaviour
 
         for (int i = 0; i < checkpoint.Length; i++)
         {
-            checkpoint[i] = GameObject.Find("Checkpoint " + i).transform;
+            //checkpoint[i] = checkpointParent.transform.Find("Checkpoint " + i).transform;
         }
 
 

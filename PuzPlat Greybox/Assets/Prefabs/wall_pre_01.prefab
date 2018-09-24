@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 33788255197600174}
   - component: {fileID: 23812890922934486}
   - component: {fileID: 65422271719058832}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: wall_pre_01
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

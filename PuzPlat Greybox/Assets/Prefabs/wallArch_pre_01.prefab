@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 33931047476346266}
   - component: {fileID: 23283853534079054}
   - component: {fileID: 64282052470809644}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: wallArch_pre_01
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

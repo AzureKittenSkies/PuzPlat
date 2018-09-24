@@ -257,7 +257,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1834507566261134}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.126, y: 1.2, z: 6.653}
+  m_LocalPosition: {x: 2.1259995, y: -5.8, z: 9.653}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4978312436474132}
@@ -714,7 +714,7 @@ MonoBehaviour:
   distanceMin: 0.5
   distanceMax: 1
   cameraCollision: 1
-  camRadius: 0.3
+  camRadius: 0.35
   rayDistance: 1000
   ignoreLayers:
     serializedVersion: 2
@@ -733,7 +733,7 @@ MonoBehaviour:
   speed: 5
   walkSpeed: 5
   runSpeed: 7.5
-  jumpSpeed: 10
+  jumpSpeed: 7.5
   gravity: 20
   controller: {fileID: 143568865472095030}
   curJump: 0
@@ -782,7 +782,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1834507566261134}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -798,9 +798,9 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 2
-  m_Radius: 0.5
+  m_Radius: 0.3
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.18, z: 0}

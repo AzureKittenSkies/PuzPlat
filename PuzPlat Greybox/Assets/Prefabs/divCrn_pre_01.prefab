@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 33447454102782006}
   - component: {fileID: 23841011281361288}
   - component: {fileID: 65597434736286500}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: divCrn_pre_01
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
