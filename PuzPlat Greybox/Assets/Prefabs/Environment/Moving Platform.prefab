@@ -37,6 +37,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4855651081221216}
+  - component: {fileID: 135585500600338146}
   m_Layer: 0
   m_Name: Checkpoint (2)
   m_TagString: Waypoint
@@ -85,6 +86,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4350466431927710}
+  - component: {fileID: 135617326094091212}
   m_Layer: 0
   m_Name: Checkpoint (1)
   m_TagString: Waypoint
@@ -119,6 +121,7 @@ GameObject:
   - component: {fileID: 4451872756547494}
   - component: {fileID: 135215826083911398}
   - component: {fileID: 114609945892558322}
+  - component: {fileID: 114419736064367398}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Moving Platform
@@ -149,6 +152,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4354859319228044}
+  - component: {fileID: 135052123656150200}
   m_Layer: 0
   m_Name: Checkpoint (0)
   m_TagString: Waypoint
@@ -164,6 +168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4046475627551500}
+  - component: {fileID: 135060435317370578}
   m_Layer: 0
   m_Name: Checkpoint (3)
   m_TagString: Waypoint
@@ -235,7 +240,7 @@ Transform:
   m_GameObject: {fileID: 1582911712303416}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 1, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4769760714886396}
   m_Father: {fileID: 4823986313200404}
@@ -292,7 +297,7 @@ Transform:
   m_GameObject: {fileID: 1403971470389734}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.002000004, y: 0.01, z: 0.002000004}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 4769760714886396}
   m_RootOrder: 0
@@ -305,7 +310,7 @@ Transform:
   m_GameObject: {fileID: 1032202106453454}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.0020000015, y: 0.01, z: 0.0020000015}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 4769760714886396}
   m_RootOrder: 1
@@ -407,7 +412,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!64 &64598753321687304
 MeshCollider:
@@ -447,9 +452,9 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.4, y: 0.25, z: 0.4}
-  m_Center: {x: 0, y: 0.25, z: 0}
---- !u!114 &114609945892558322
+  m_Size: {x: 2, y: 1, z: 2}
+  m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &114419736064367398
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -457,16 +462,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 1582911712303416}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d960c675af51c4d928e1ad88f895f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypointParent: {fileID: 1725435492703996}
+  waypoints: []
+  speed: 5
+  pingPong: 1
+  loopBack: 0
+  currentPoint: 0
+  size: 4
+--- !u!114 &114609945892558322
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1582911712303416}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42e86f8c254de4f4fa554ea2b7133957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   movePlat: {fileID: 1582911712303416}
   checkpointIndex: 0
   checkpoint:
-  - {fileID: 4354859319228044}
-  - {fileID: 4350466431927710}
-  - {fileID: 4855651081221216}
-  - {fileID: 4046475627551500}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   target: {fileID: 0}
   checkpointParent: {fileID: 1725435492703996}
   platDestination: {x: 0, y: 0, z: 0}
@@ -476,6 +499,30 @@ MonoBehaviour:
   horzMove: 0
   pingPong: 0
   loopBack: 0
+--- !u!135 &135052123656150200
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1759570981908140}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &135060435317370578
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1971964168941064}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135215826083911398
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -487,4 +534,28 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.01
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &135585500600338146
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1240894102887994}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &135617326094091212
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1485284492824888}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}

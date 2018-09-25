@@ -30,7 +30,7 @@ public class Fish : MonoBehaviour
     public float rotationSpeed = 10f;
     public float orbitRotationSpeed;
     public float distConstrain = 5f;
-    public float minDist = 1.5f;
+    public float minDist = 2.5f;
     public bool targetPlayer = false;
     public float switchVel = 1.5f;
     public float switchRot = 5f;

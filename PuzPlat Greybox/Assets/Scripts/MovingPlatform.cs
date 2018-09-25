@@ -25,29 +25,24 @@ public class MovingPlatform : MonoBehaviour
     {
         rigid = movePlat.GetComponent<Rigidbody>();
 
-        if (this.gameObject.name.Contains("Vertical"))
-        {
-            vertMove = true;
-        }
 
-        else if (this.gameObject.name.Contains("Horizontal"))
-        {
-            horzMove = true;
-        }
 
         for (int i = 0; i < checkpoint.Length; i++)
         {
-            //checkpoint[i] = checkpointParent.transform.Find("Checkpoint " + i).transform;
+            checkpoint[i] = checkpointParent.transform.Find("Checkpoint (" + i +")").transform;
         }
+        movePlat.transform.position = checkpoint[checkpointIndex].position;
 
 
     }
 
     private void Update()
     {
-
-        movePlat.transform.position = Vector3.Lerp(checkpoint[checkpointIndex].position, checkpoint[checkpointIndex + 1].position, speed);
-
+        
+        if(!loopBack)
+        {
+           transform.position = Vector3.Lerp(checkpoint[checkpointIndex].position, checkpoint[checkpointIndex + 1].position, speed);
+        }
         if (pingPong)
         {
             loopBack = true;
