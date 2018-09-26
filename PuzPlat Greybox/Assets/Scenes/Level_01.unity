@@ -7182,6 +7182,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1225032000}
   m_Script: {fileID: 11500000, guid: f5713df337947b249852189605f4170d, type: 3}
+--- !u!95 &956716260 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95990261055896412, guid: a28581ceb4b064540a7858d9056bd7c3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1225032000}
 --- !u!1001 &993712184
 Prefab:
   m_ObjectHideFlags: 0
@@ -8525,6 +8530,16 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 03628e99e20eb834c8865605781b0917, type: 2}
+    - target: {fileID: 114735176520669056, guid: a28581ceb4b064540a7858d9056bd7c3,
+        type: 2}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 956716260}
+    - target: {fileID: 95990261055896412, guid: a28581ceb4b064540a7858d9056bd7c3,
+        type: 2}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: aa74ee88790e91f49a21e572a3603866, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a28581ceb4b064540a7858d9056bd7c3, type: 2}
   m_IsPrefabAsset: 0

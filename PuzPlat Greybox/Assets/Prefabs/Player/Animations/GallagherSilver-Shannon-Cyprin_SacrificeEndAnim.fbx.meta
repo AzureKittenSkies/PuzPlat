@@ -1,0 +1,311 @@
+fileFormatVersion: 2
+guid: 30a8e0e28c6d6ca4c8b6d937c333cfbe
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: back_CTRL
+    100002: back_jnt
+    100004: belt
+    100006: chest_jnt
+    100008: finTop_01_jnt
+    100010: fishBody
+    100012: fishMesh
+    100014: //RootNode
+    100016: head_CTRL
+    100018: hips_CTRL
+    100020: hips_jnt_ROOT
+    100022: L_ankle_pivot
+    100024: L_ankle_pivot 1
+    100026: L_arm_IK
+    100028: L_clavicle_jnt
+    100030: L_elbow_CTRL
+    100032: L_elbow_jnt
+    100034: L_eye
+    100036: L_foot_CTRL
+    100038: L_foot_IK
+    100040: L_foot_jnt
+    100042: L_forearm_jnt
+    100044: L_hand_CTRL
+    100046: L_hand_offset
+    100048: L_handTip_jnt_END
+    100050: L_heel_jnt
+    100052: L_heel_pivot
+    100054: L_heel_pivot 1
+    100056: L_knee_CTRL
+    100058: L_knee_jnt
+    100060: L_leg_IK
+    100062: L_leg_jnt
+    100064: L_shoulder_CTRL
+    100066: L_shoulder_jnt
+    100068: L_swivel_pivot
+    100070: L_swivel_pivot 1
+    100072: L_toe_IK
+    100074: L_toe_jnt
+    100076: L_toe_pivot
+    100078: L_toe_pivot 1
+    100080: L_toeTip_pivot
+    100082: L_toeTip_pivot 1
+    100084: L_wrist_jnt
+    100086: master_CTRL
+    100088: neck_jnt
+    100090: R_arm_IK
+    100092: R_clavicle_jnt
+    100094: R_elbow_CTRL
+    100096: R_elbow_jnt
+    100098: R_eye
+    100100: R_foot_CTRL
+    100102: R_foot_IK
+    100104: R_foot_jnt
+    100106: R_forearm_jnt
+    100108: R_hand_CTRL
+    100110: R_hand_offset
+    100112: R_handTip_jnt_END
+    100114: R_heel_jnt
+    100116: R_knee_CTRL
+    100118: R_knee_jnt
+    100120: R_leg_IK
+    100122: R_leg_jnt
+    100124: R_shoulder_CTRL
+    100126: R_shoulder_jnt
+    100128: R_toe_IK
+    100130: R_toe_jnt
+    100132: R_wrist_jnt
+    100134: tail_CTRL
+    100136: tailBase_IK
+    100138: tailBase_jnt
+    100140: tailBase_pivot
+    100142: tailLower_jnt
+    100144: tailLowerTip_jnt_END
+    100146: tailMid_IK
+    100148: tailMid_pivot
+    100150: tailMidBase_pivot
+    100152: tailMidBot_IK
+    100154: tailMidUp_IK
+    100156: tailSplit_jnt
+    100158: tailTip_pivot
+    100160: tailTIpBot_IK
+    100162: tailTipUp_IK
+    100164: tailTop_jnt
+    100166: tailUpper_jnt
+    100168: tailUpperTip_jnt_END
+    100170: tube_01
+    100172: tube_02
+    100174: tube_03
+    100176: upperBack_CTRL
+    400000: back_CTRL
+    400002: back_jnt
+    400004: belt
+    400006: chest_jnt
+    400008: finTop_01_jnt
+    400010: fishBody
+    400012: fishMesh
+    400014: //RootNode
+    400016: head_CTRL
+    400018: hips_CTRL
+    400020: hips_jnt_ROOT
+    400022: L_ankle_pivot
+    400024: L_ankle_pivot 1
+    400026: L_arm_IK
+    400028: L_clavicle_jnt
+    400030: L_elbow_CTRL
+    400032: L_elbow_jnt
+    400034: L_eye
+    400036: L_foot_CTRL
+    400038: L_foot_IK
+    400040: L_foot_jnt
+    400042: L_forearm_jnt
+    400044: L_hand_CTRL
+    400046: L_hand_offset
+    400048: L_handTip_jnt_END
+    400050: L_heel_jnt
+    400052: L_heel_pivot
+    400054: L_heel_pivot 1
+    400056: L_knee_CTRL
+    400058: L_knee_jnt
+    400060: L_leg_IK
+    400062: L_leg_jnt
+    400064: L_shoulder_CTRL
+    400066: L_shoulder_jnt
+    400068: L_swivel_pivot
+    400070: L_swivel_pivot 1
+    400072: L_toe_IK
+    400074: L_toe_jnt
+    400076: L_toe_pivot
+    400078: L_toe_pivot 1
+    400080: L_toeTip_pivot
+    400082: L_toeTip_pivot 1
+    400084: L_wrist_jnt
+    400086: master_CTRL
+    400088: neck_jnt
+    400090: R_arm_IK
+    400092: R_clavicle_jnt
+    400094: R_elbow_CTRL
+    400096: R_elbow_jnt
+    400098: R_eye
+    400100: R_foot_CTRL
+    400102: R_foot_IK
+    400104: R_foot_jnt
+    400106: R_forearm_jnt
+    400108: R_hand_CTRL
+    400110: R_hand_offset
+    400112: R_handTip_jnt_END
+    400114: R_heel_jnt
+    400116: R_knee_CTRL
+    400118: R_knee_jnt
+    400120: R_leg_IK
+    400122: R_leg_jnt
+    400124: R_shoulder_CTRL
+    400126: R_shoulder_jnt
+    400128: R_toe_IK
+    400130: R_toe_jnt
+    400132: R_wrist_jnt
+    400134: tail_CTRL
+    400136: tailBase_IK
+    400138: tailBase_jnt
+    400140: tailBase_pivot
+    400142: tailLower_jnt
+    400144: tailLowerTip_jnt_END
+    400146: tailMid_IK
+    400148: tailMid_pivot
+    400150: tailMidBase_pivot
+    400152: tailMidBot_IK
+    400154: tailMidUp_IK
+    400156: tailSplit_jnt
+    400158: tailTip_pivot
+    400160: tailTIpBot_IK
+    400162: tailTipUp_IK
+    400164: tailTop_jnt
+    400166: tailUpper_jnt
+    400168: tailUpperTip_jnt_END
+    400170: tube_01
+    400172: tube_02
+    400174: tube_03
+    400176: upperBack_CTRL
+    2100000: CyprinTexture
+    4300000: fishBody
+    4300002: R_eye
+    4300004: L_eye
+    4300006: belt
+    4300008: tube_01
+    4300010: tube_02
+    4300012: tube_03
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: belt
+    13700002: fishBody
+    13700004: L_eye
+    13700006: R_eye
+    13700008: tube_01
+    13700010: tube_02
+    13700012: tube_03
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

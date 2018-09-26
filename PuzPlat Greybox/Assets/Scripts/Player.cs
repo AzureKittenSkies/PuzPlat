@@ -63,39 +63,55 @@ public class Player : MonoBehaviour
         float inputH = Input.GetAxis("Horizontal");
         float inputV = Input.GetAxis("Vertical");
 
-        if (controller.isGrounded)
+        if (inputH == 0 && inputV == 0)
         {
-            curJump = 0;
-
-            moveDirection = new Vector3(inputH, 0, inputV);
-            moveDirection *= speed;
-            moveDirection = transform.TransformDirection(moveDirection);
-
+            anim.SetBool("isMoving", false);
         }
 
-        if (!controller.isGrounded)
+        else if (inputH != 0 || inputV != 0)
         {
-            moveDirection.x = Input.GetAxis("Horizontal") * speed;
-            moveDirection.z = Input.GetAxis("Vertical") * speed;
-            moveDirection = transform.TransformDirection(moveDirection);
-        }
-
-        // rotate the player in the direction of camera
-        Vector3 euler = cam.transform.eulerAngles;
-        transform.rotation = Quaternion.AngleAxis(euler.y, Vector3.up);
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            if (curJump <= fishList.Count)
+            if (controller.isGrounded)
             {
-                moveDirection.y = jumpSpeed;
-                curJump++;
+                anim.SetBool("isMoving", true);
+                curJump = 0;
+
+                moveDirection = new Vector3(inputH, 0, inputV);
+                moveDirection *= speed;
+                moveDirection = transform.TransformDirection(moveDirection);
+
             }
+
+            if (!controller.isGrounded)
+            {
+                anim.SetBool("isMoving", true);
+                moveDirection.x = Input.GetAxis("Horizontal") * speed;
+                moveDirection.z = Input.GetAxis("Vertical") * speed;
+                moveDirection = transform.TransformDirection(moveDirection);
+            }
+
+            // rotate the player in the direction of camera
+            Vector3 euler = cam.transform.eulerAngles;
+            transform.rotation = Quaternion.AngleAxis(euler.y, Vector3.up);
+
+            if (Input.GetButtonDown("Jump"))
+            {
+                if (curJump <= fishList.Count)
+                {
+                    anim.SetBool("isJumping", true);
+                    moveDirection.y = jumpSpeed;
+                    curJump++;
+                    anim.SetBool("isJumping", false);
+                }
+            }
+
+            if (Input.GetKey(KeyCode.J))
+            {
+                anim.SetBool("isSacrificing", true);
+            }
+
+            moveDirection.y -= gravity * Time.deltaTime;
+            controller.Move(moveDirection * Time.deltaTime);
         }
-
-        moveDirection.y -= gravity * Time.deltaTime;
-        controller.Move(moveDirection * Time.deltaTime);
-
     }
 
 

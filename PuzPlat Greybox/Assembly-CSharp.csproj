@@ -181,10 +181,10 @@
       <HintPath>C:/Users/aaron.hayman4/Documents/PuzPlat/PuzPlat Greybox/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>C:/Users/aaron.hayman4/Documents/Repos/PuzPlat/PuzPlat Greybox/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+      <HintPath>C:/Users/aaron.hayman4/Documents/PuzPlat/PuzPlat Greybox/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>C:/Users/aaron.hayman4/Documents/Repos/PuzPlat/PuzPlat Greybox/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+      <HintPath>C:/Users/aaron.hayman4/Documents/PuzPlat/PuzPlat Greybox/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.0f2/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
