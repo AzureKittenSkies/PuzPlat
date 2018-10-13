@@ -5,8 +5,6 @@ using UnityEngine;
 public class BloodDoor : MonoBehaviour
 {
 
-    public Material doorMatActive;
-    public Material doorMatInactive;
     public GameObject barrier;
 
     public bool sacrificed = false;
@@ -28,8 +26,8 @@ public class BloodDoor : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.J) && !sacrificed && other.gameObject.GetComponent<Player>().fishList.Count > 0)
             {
-                other.gameObject.GetComponent<Player>().fishList.RemoveAt(0);
                 other.gameObject.GetComponent<Player>().fishList[0].GetComponent<Fish>().sacrificed = true;
+                other.gameObject.GetComponent<Player>().fishList.RemoveAt(0);
                 sacrificed = true;
             }
             else if (other.gameObject.GetComponent<Player>().fishList.Count <= 0)

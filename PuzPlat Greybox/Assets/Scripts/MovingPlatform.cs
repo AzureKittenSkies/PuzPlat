@@ -5,6 +5,7 @@ using UnityEngine;
 public class MovingPlatform : MonoBehaviour
 {
     public GameObject movePlat;
+    public GameObject activeSwitch;
 
     public int checkpointIndex;
     public Transform[] checkpoint;
@@ -16,15 +17,18 @@ public class MovingPlatform : MonoBehaviour
     public Rigidbody rigid;
 
     public float speed = 2.5f;
+    public float tempSpeed;
 
     public bool vertMove, horzMove;
     public bool pingPong = false;
     public bool loopBack = false;
 
+    public bool needSwitch;
+    public bool switchActive;
+
     void Start()
     {
         rigid = movePlat.GetComponent<Rigidbody>();
-
 
 
         for (int i = 0; i < checkpoint.Length; i++)
@@ -32,13 +36,27 @@ public class MovingPlatform : MonoBehaviour
             checkpoint[i] = checkpointParent.transform.Find("Checkpoint (" + i +")").transform;
         }
         movePlat.transform.position = checkpoint[checkpointIndex].position;
-
+        tempSpeed = speed;
 
     }
 
     private void Update()
     {
-        
+
+
+        if (needSwitch)
+        {
+            if (!switchActive)
+            {
+                speed = 0;
+            }
+
+            else if (switchActive)
+            {
+                speed = tempSpeed;
+            }
+        }
+
         if(!loopBack)
         {
            transform.position = Vector3.Lerp(checkpoint[checkpointIndex].position, checkpoint[checkpointIndex + 1].position, speed);

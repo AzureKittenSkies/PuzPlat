@@ -149,7 +149,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 5f3797263f4664c4ba241b065db6f587, type: 3}
+  - {fileID: 2100000, guid: 1da66a9fabd5f764f92ccd23a9d22fa9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -184,7 +184,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100002, guid: 5f3797263f4664c4ba241b065db6f587, type: 3}
+  - {fileID: 2100000, guid: 1da66a9fabd5f764f92ccd23a9d22fa9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -265,11 +265,12 @@ MonoBehaviour:
   curSpeed: 0
   followSpeed: 0
   catchupSpeed: 0
+  tempCatchupSpeed: 0
   curRotSpeed: 0
-  rotationSpeed: 10
+  rotationSpeed: 5
   orbitRotationSpeed: 0
   distConstrain: 2.25
-  minDist: 1
+  minDist: 1.5
   targetPlayer: 0
   switchVel: 1.5
   switchRot: 5

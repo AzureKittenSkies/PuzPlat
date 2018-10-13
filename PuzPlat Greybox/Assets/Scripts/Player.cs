@@ -68,19 +68,8 @@ public class Player : MonoBehaviour
             anim.SetBool("isMoving", false);
         }
 
-        else if (inputH != 0 || inputV != 0)
+        if (inputH != 0 || inputV != 0)
         {
-            if (controller.isGrounded)
-            {
-                anim.SetBool("isMoving", true);
-                curJump = 0;
-
-                moveDirection = new Vector3(inputH, 0, inputV);
-                moveDirection *= speed;
-                moveDirection = transform.TransformDirection(moveDirection);
-
-            }
-
             if (!controller.isGrounded)
             {
                 anim.SetBool("isMoving", true);
@@ -89,29 +78,45 @@ public class Player : MonoBehaviour
                 moveDirection = transform.TransformDirection(moveDirection);
             }
 
-            // rotate the player in the direction of camera
-            Vector3 euler = cam.transform.eulerAngles;
-            transform.rotation = Quaternion.AngleAxis(euler.y, Vector3.up);
-
-            if (Input.GetButtonDown("Jump"))
-            {
-                if (curJump <= fishList.Count)
-                {
-                    anim.SetBool("isJumping", true);
-                    moveDirection.y = jumpSpeed;
-                    curJump++;
-                    anim.SetBool("isJumping", false);
-                }
-            }
+            //// rotate the player in the direction of camera
+            //Vector3 euler = cam.transform.eulerAngles;
+            //transform.rotation = Quaternion.AngleAxis(euler.y, Vector3.up
 
             if (Input.GetKey(KeyCode.J))
             {
                 anim.SetBool("isSacrificing", true);
             }
 
-            moveDirection.y -= gravity * Time.deltaTime;
-            controller.Move(moveDirection * Time.deltaTime);
         }
+
+        if (controller.isGrounded)
+        {
+            anim.SetBool("isMoving", true);
+            curJump = 0;
+
+            moveDirection = new Vector3(inputH, 0, inputV);
+            moveDirection *= speed;
+            moveDirection = transform.TransformDirection(moveDirection);
+
+        }
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            if (curJump <= fishList.Count)
+            {
+                anim.SetBool("isJumping", true);
+                moveDirection.y = jumpSpeed;
+                curJump++;
+                anim.SetBool("isJumping", false);
+            }
+        }
+
+        // rotate the player in the direction of camera
+        Vector3 euler = cam.transform.eulerAngles;
+        transform.rotation = Quaternion.AngleAxis(euler.y, Vector3.up);
+
+        moveDirection.y -= gravity * Time.deltaTime;
+        controller.Move(moveDirection * Time.deltaTime);
     }
 
 

@@ -9,6 +9,7 @@ TagManager:
   - Moving Platform
   - Environment
   - Waypoint
+  - Door
   layers:
   - Default
   - TransparentFX

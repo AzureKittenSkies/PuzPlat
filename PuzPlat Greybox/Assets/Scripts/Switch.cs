@@ -21,12 +21,16 @@ public class Switch : MonoBehaviour
 
     public Material matActive, matInactive;
     public Material thisMat;
+
+    public GameObject[] target;
     #endregion
 
 
     #region Holding Fish References
     public GameObject heldFish;
     public GameObject holdingSwitch;
+
+   
 
     #endregion
 
@@ -82,7 +86,18 @@ public class Switch : MonoBehaviour
                     playerScript.fishList.Add(heldFish);
                     // set the displaying material to be the inactive material
                     thisMat = matInactive;
-                    active = false;
+                    foreach (GameObject targetObject in target)
+                    {
+                        if (targetObject.gameObject.CompareTag("Moving Platform"))
+                        {
+                            targetObject.GetComponent<AltMove>().switchActive = false;
+                        }
+                        if (targetObject.gameObject.CompareTag("Door"))
+                        {
+                            targetObject.GetComponent<Door>().active = false;
+                        }
+                    }
+
                 }
 
                 // or if the switch is not active
@@ -93,12 +108,24 @@ public class Switch : MonoBehaviour
                     // then get a fish to target the holding switch
                     playerScript.fishList[0].GetComponent<Fish>().target = this.gameObject;
                     heldFish = playerScript.fishList[0];
-                    // remove the held fish from the fishList
+                    // remove the held fish from the fishList 
                     playerScript.fishList.RemoveAt(0);
                     // set the displaying mterial to be the inactive material
                     thisMat = matActive;
-                    active = true;
+                    foreach (GameObject targetObject in target)
+                    {
+                        if (targetObject.gameObject.CompareTag("Moving Platform"))
+                        {
+                            targetObject.GetComponent<AltMove>().switchActive = true;
+                        }
+                        if (targetObject.gameObject.CompareTag("Environment"))
+                        {
+                            targetObject.GetComponent<Door>().active = true;
+                        }
+                    }
                 }
+
+                active = !active;
             }
         }
 

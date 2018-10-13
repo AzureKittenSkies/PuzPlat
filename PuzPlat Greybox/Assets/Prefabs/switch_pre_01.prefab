@@ -19,6 +19,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4286502818463726}
+  - component: {fileID: 65989218755386566}
+  - component: {fileID: 114339955888974240}
   m_Layer: 0
   m_Name: switch_pre_01
   m_TagString: Environment
@@ -82,7 +84,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1024029517848006}
   m_LocalRotation: {x: -0, y: -0.38268322, z: -0, w: 0.9238797}
-  m_LocalPosition: {x: -8.68, y: 0, z: 0.62}
+  m_LocalPosition: {x: -9.036, y: 0, z: 0.792}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4237946308904552}
@@ -215,3 +217,35 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: bf932e824c1c64b3daa0275b4a3a5025, type: 3}
+--- !u!65 &65989218755386566
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1024029517848006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1.5, z: 3}
+  m_Center: {x: 0, y: 0.75, z: -0.75}
+--- !u!114 &114339955888974240
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1024029517848006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41ed2b32282ef0f4c8a8739605a0e4e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  matActive: {fileID: 0}
+  matInactive: {fileID: 0}
+  thisMat: {fileID: 0}
+  target: {fileID: 0}
+  heldFish: {fileID: 0}
+  holdingSwitch: {fileID: 1289066969309668}
+  playerScript: {fileID: 0}
+  player: {fileID: 0}

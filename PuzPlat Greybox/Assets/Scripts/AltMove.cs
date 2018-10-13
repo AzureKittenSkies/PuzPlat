@@ -8,6 +8,10 @@ public class AltMove : MonoBehaviour
     public GameObject waypointParent;
     public Transform[] waypoints;
     public float speed = 2;
+    public float tempSpeed;
+
+    public bool needSwitch;
+    public bool switchActive;
 
     public bool pingPong;
     public bool loopBack;
@@ -23,12 +27,25 @@ public class AltMove : MonoBehaviour
         {
             waypoints[i] = waypointParent.transform.Find("Checkpoint (" + i + ")").transform;
         }
+
+        tempSpeed = speed;
     }
 
     void Update()
     {
 
+        if (needSwitch)
+        {
+            if (!switchActive)
+            {
+                speed = 0;
+            }
 
+            else if (switchActive)
+            {
+                speed = tempSpeed;
+            }
+        }
 
 
         if (transform.position != waypoints[currentPoint].transform.position)
