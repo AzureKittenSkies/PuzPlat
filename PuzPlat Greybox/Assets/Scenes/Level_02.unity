@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667546, g: 0.48427135, b: 0.5645225, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4613,6 +4613,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4862629332812408, guid: b5c28cd1d27a385449e5838295fff70d,
     type: 2}
   m_PrefabInternal: {fileID: 393097818}
+--- !u!1 &397761440 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1582911712303416, guid: f1f8cae0b9cfb4a4683b595d0c0e2db4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1339428574}
 --- !u!1001 &404561228
 Prefab:
   m_ObjectHideFlags: 0
@@ -11852,7 +11857,7 @@ Prefab:
     - target: {fileID: 114339955888974240, guid: 9dc750742cc2f49228655cad730a1f76,
         type: 2}
       propertyPath: target.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4286502818463726, guid: 9dc750742cc2f49228655cad730a1f76, type: 2}
       propertyPath: m_LocalPosition.x
@@ -11940,6 +11945,11 @@ Prefab:
       propertyPath: target.Array.data[7]
       value: 
       objectReference: {fileID: 2018665342}
+    - target: {fileID: 114339955888974240, guid: 9dc750742cc2f49228655cad730a1f76,
+        type: 2}
+      propertyPath: target.Array.data[8]
+      value: 
+      objectReference: {fileID: 397761440}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dc750742cc2f49228655cad730a1f76, type: 2}
   m_IsPrefabAsset: 0
@@ -13073,7 +13083,8 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 956716256}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114311139319700062, guid: 01ca9c2b3675be148b59118798fef238, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 01ca9c2b3675be148b59118798fef238, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &1030910728

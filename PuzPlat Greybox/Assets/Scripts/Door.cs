@@ -5,7 +5,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
 
-    public bool active;
+    public bool active = true;
     public GameObject doorObj;
 
 
@@ -13,7 +13,7 @@ public class Door : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        active = true;
+
     }
 
     // Update is called once per frame
