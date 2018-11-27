@@ -3,6 +3,7 @@ PlayerPath?
 C:/Users/aaron.hayman4/Documents/Repos/PuzPlat/PuzPlat Greybox/Builds/PuzPlat Greybox.exe
 SceneListBegin?
 Assets/Scenes/Level_01.unity
+Assets/Scenes/Level_02.unity
 SceneListEnd?
 4206c110c99e43920bbd36a379dec799 ProBuilderCore.dll:ProBuilder.Core.pb_PreferenceDictionary
 410153df6407a5a123cf4dcd4ccb7de8 Unity.Postprocessing.Runtime.dll:UnityEngine.Rendering.PostProcessing.PostProcessLayer
@@ -23,7 +24,7 @@ c7dd12c15208b0447e101f80038706df UnityEngine.Timeline.dll:UnityEngine.Timeline.A
 0ddb2c46096a1e59e0dce07886ce4769 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 0ddb2c46096a1e59e0dce07886ce4769 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 64f3a13c1277a7f1324321d93d0ec13b UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
-0d63146db480865efb910bfb781557ed Assembly-CSharp.dll:.BloodDoor
+104a119a2fc9c57766b8cda4ee580635 Assembly-CSharp.dll:.BloodDoor
 a1745a63aaebc245b5d095f3d84b9534 Unity.Postprocessing.Runtime.dll:UnityEngine.Rendering.PostProcessing.Bloom
 376063456306dc966d7f23f6888db029 Assembly-CSharp.dll:.RFX4_DemoGUI
 f6637497451c9a030c421de4a1ad5cdb Unity.TextMeshPro.dll:TMPro.TMP_ScrollbarEventHandler
@@ -64,7 +65,7 @@ e90403eeda069970e0b9de1533de13a6 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 88d7d4231f4e98130c285a8556f9964e Unity.Postprocessing.Runtime.dll:UnityEngine.Rendering.PostProcessing.DepthOfField
 50b0b141074b216c8b53b1bd467f73c9 Unity.TextMeshPro.dll:TMPro.TMP_InputField
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.RFX4_FPS
-f619093c5a2a60996ba14dbb2d542306 Assembly-CSharp.dll:.Switch
+2c338b89c0d0244b92593a013d61784e Assembly-CSharp.dll:.Switch
 53cefe5d98cadefbab750835e70b89c0 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 486cd95c82d8305219c352c06b776e1f UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 da2091a04d360891450faf16cdf621f1 UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -159,8 +160,9 @@ c534d9a884c9148d02fee206a5b86e83 Assembly-CSharp.dll:.RFX4_DeactivateRigidbodyBy
 880d51fd5124fbef0cbc3c816f270f6a Assembly-CSharp.dll:.RFX4_CameraShake
 f16835701e71dd5d6fb1fed4b7aff1d8 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 d94202d18831c23096e582e97311602c Assembly-CSharp.dll:.RFX4_TransformMotion
-9ef9d0d15f0b35b55934b025192e6de2 Assembly-CSharp.dll:.AltMove
+cb97c056742955bbc4637f3e7c14d55f Assembly-CSharp.dll:.AltMove
 f132d732011d7c85599b71ecb4fe2682 Assembly-CSharp.dll:.Menu
+7fb09115669761661b4ec083304d591e Assembly-CSharp.dll:.Door
 dc1f1de66aabe556944f95f4926904d7 Unity.Postprocessing.Runtime.dll:UnityEngine.Rendering.PostProcessing.PostProcessResources
 486cd95c82d8305219c352c06b776e1f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
 108398666b870c8be31bd666b465e311 Unity.Postprocessing.Runtime.dll:UnityEngine.Rendering.PostProcessing.AutoExposure
@@ -197,6 +199,7 @@ ec66a12d355fc8822e309b3a2117da3e Assembly-CSharp.dll:.PlayerInput
 86c4e278c606cb132540a6291ebc347a Assembly-CSharp.dll:.RFX4_ShaderColorGradient
 e53cc67d84060d628c7f03fc725766d8 Unity.TextMeshPro.dll:TMPro.TMP_FontAsset
 392c5b921098bd4c139d9146d0efa6d7 Unity.TextMeshPro.dll:TMPro.TMP_Settings
+398a4bbfd76644fac568c6973e60fca8 Assembly-CSharp.dll:.NextLevel
 486cd95c82d8305219c352c06b776e1f UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 e033f131358cea5a0eabf9561e781deb UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
 9d863b523b577f5c3d915351a74cd338 UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
@@ -232,7 +235,7 @@ aac9c55ae7ba4b95b852a7d9c191acd1 Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 0a006f3734181ba8b26758f0866152c0 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 cee838d9576f5bb8d2be408c0e2d1231 Assembly-CSharp.dll:.RFX4_RotateAround
 b4dc5160731a7c13f6e99ee25c1ab473 Assembly-CSharp.dll:.RFX4_AudioCurves
-2907cdf57767554a1206a06af2aa706b Assembly-CSharp.dll:.MovingPlatform
+3c438288fbe5ba2b5d32ced4a385db05 Assembly-CSharp.dll:.MovingPlatform
 e04611b8715e6833d2bd7010fc6be10b Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 1fa870aac2dc35af06d9bd3ae2db93ee Assembly-CSharp.dll:.RFX4_SimpleDecal
 6e512038ec2129c3a16d9408e8de114c Assembly-CSharp.dll:.RFX4_ScaleCurves
